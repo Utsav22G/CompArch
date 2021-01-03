@@ -1,0 +1,90 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55ac9274c7d0 .scope module, "AND2" "AND2" 2 20;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /OUTPUT 1 "Q"
+o0x7f86853070d8 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55ac92797f10_0 .net "A", 0 0, o0x7f86853070d8;  0 drivers
+v0x55ac92797fe0_0 .net "B", 0 0, L_0x55ac92798bf0;  1 drivers
+o0x7f8685307018 .functor BUFZ 1, C4<z>; HiZ drive
+v0x55ac927980b0_0 .net "Q", 0 0, o0x7f8685307018;  0 drivers
+v0x55ac927981b0_0 .net "Qint", 0 0, L_0x55ac92798d00;  1 drivers
+S_0x55ac92762200 .scope module, "inverter0" "INV1" 2 27, 2 13 0, S_0x55ac9274c7d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "Y"
+    .port_info 1 /OUTPUT 1 "Yinv"
+L_0x55ac92798d00 .functor NOT 1, o0x7f8685307018, C4<0>, C4<0>, C4<0>;
+v0x55ac92782b20_0 .net "Y", 0 0, o0x7f8685307018;  alias, 0 drivers
+v0x55ac92797860_0 .net "Yinv", 0 0, L_0x55ac92798d00;  alias, 1 drivers
+S_0x55ac92797980 .scope module, "nandgate0" "NAND2" 2 26, 2 1 0, S_0x55ac9274c7d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /OUTPUT 1 "Q"
+L_0x55ac92798b00 .functor AND 1, L_0x55ac92798d00, o0x7f86853070d8, C4<1>, C4<1>;
+L_0x55ac92798bf0 .functor NOT 1, L_0x55ac92798b00, C4<0>, C4<0>, C4<0>;
+v0x55ac92797ba0_0 .net "A", 0 0, L_0x55ac92798d00;  alias, 1 drivers
+v0x55ac92797c60_0 .net "B", 0 0, o0x7f86853070d8;  alias, 0 drivers
+v0x55ac92797d00_0 .net "Q", 0 0, L_0x55ac92798bf0;  alias, 1 drivers
+v0x55ac92797dd0_0 .net "Qint", 0 0, L_0x55ac92798b00;  1 drivers
+S_0x55ac92762080 .scope module, "NAND2_test" "NAND2_test" 3 4;
+ .timescale -9 -12;
+v0x55ac92798860_0 .var "A", 0 0;
+v0x55ac92798930_0 .var "B", 0 0;
+v0x55ac92798a00_0 .net "Q", 0 0, L_0x55ac92798ea0;  1 drivers
+S_0x55ac927982a0 .scope module, "DUT0" "NAND2" 3 9, 2 1 0, S_0x55ac92762080;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A"
+    .port_info 1 /INPUT 1 "B"
+    .port_info 2 /OUTPUT 1 "Q"
+L_0x55ac92798d70 .functor AND 1, v0x55ac92798860_0, v0x55ac92798930_0, C4<1>, C4<1>;
+L_0x55ac92798ea0 .functor NOT 1, L_0x55ac92798d70, C4<0>, C4<0>, C4<0>;
+v0x55ac927984e0_0 .net "A", 0 0, v0x55ac92798860_0;  1 drivers
+v0x55ac927985c0_0 .net "B", 0 0, v0x55ac92798930_0;  1 drivers
+v0x55ac92798680_0 .net "Q", 0 0, L_0x55ac92798ea0;  alias, 1 drivers
+v0x55ac92798720_0 .net "Qint", 0 0, L_0x55ac92798d70;  1 drivers
+    .scope S_0x55ac92762080;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ac92798860_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ac92798930_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ac92798860_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ac92798930_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ac92798860_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55ac92798930_0, 0, 1;
+    %delay 5000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ac92798860_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55ac92798930_0, 0, 1;
+    %delay 5000, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x55ac92762080;
+T_1 ;
+    %vpi_call 3 20 "$monitor", "%t | A = %b | B = %b | Q = %b", $time, v0x55ac92798860_0, v0x55ac92798930_0, v0x55ac92798a00_0 {0 0 0};
+    %vpi_call 3 21 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 3 22 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "./and.v";
+    "and.t.v";

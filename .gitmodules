@@ -1,0 +1,30 @@
+[submodule "Assignments/hw1-Utsav22G"]
+	path = Assignments/hw1-Utsav22G
+	url = https://github.com/OlinCompArchFA20/hw1-Utsav22G
+[submodule "Assignments/hw2-Utsav22G"]
+	path = Assignments/hw2-Utsav22G
+	url = https://github.com/OlinCompArchFA20/hw2-Utsav22G
+[submodule "Assignments/hw3-Utsav22G"]
+	path = Assignments/hw3-Utsav22G
+	url = https://github.com/OlinCompArchFA20/hw3-Utsav22G
+[submodule "Assignments/hw4-Utsav22G"]
+	path = Assignments/hw4-Utsav22G
+	url = https://github.com/OlinCompArchFA20/hw4-Utsav22G
+[submodule "Assignments/hw5-Utsav22G"]
+	path = Assignments/hw5-Utsav22G
+	url = https://github.com/OlinCompArchFA20/hw5-Utsav22G
+[submodule "Assignments/hw6-Utsav22G"]
+	path = Assignments/hw6-Utsav22G
+	url = https://github.com/OlinCompArchFA20/hw6-Utsav22G
+[submodule "Assignments/lab1-cali-utsav-chase"]
+	path = Assignments/lab1-cali-utsav-chase
+	url = https://github.com/OlinCompArchFA20/lab1-cali-utsav-chase
+[submodule "Assignments/lab2-cali-chase-utsav"]
+	path = Assignments/lab2-cali-chase-utsav
+	url = https://github.com/OlinCompArchFA20/lab2-cali-chase-utsav
+[submodule "Assignments/lab3-cali-chase-utsav"]
+	path = Assignments/lab3-cali-chase-utsav
+	url = https://github.com/OlinCompArchFA20/lab3-cali-chase-utsav
+[submodule "Assignments/lab-04-Cali-Chase-Utsav"]
+	path = Assignments/lab-04-Cali-Chase-Utsav
+	url = https://github.com/OlinCompArchFA20/lab-04-Cali-Chase-Utsav
